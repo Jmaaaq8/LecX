@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Selector</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #4A90E2, #50C9C3);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #fefefe;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        /* Button Styling */
+        .options button {
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #4A90E2;
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .options button:hover {
+            background-color: #E3F2FD;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Choose a Quiz Type</h1>
+        <div class="options">
+            <button onclick="redirect('dmi.html')">Multiple Choice</button>
+            <button onclick="redirect('dmi2.html/dmi2.html')">Fill in the Blank</button>
+        </div>
+    </div>
+
+    <script>
+        function redirect(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+
+</html>

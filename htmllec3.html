@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/Untitled design (3).png" type="">
+  
+    <title> LecX </title>
+  
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  
+    <!--owl slider stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  
+    <!-- font awesome style -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+  
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+  
+  </head>
+  
+  <body class="sub_page">
+  
+    <div class="hero_area">
+  
+      <div class="hero_bg_box">
+        <div class="bg_img_box">
+          <img src="images/hero-bg.png" alt="">
+        </div>
+      </div>
+          <!-- header section strats -->
+          <header class="header_section">
+              <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg custom_nav-container ">
+                  <a class="navbar-brand" href="index.html">
+                    <span>
+                      LecX
+                    </span>
+                  </a>
+        
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class=""> </span>
+                  </button>
+        
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav  ">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="index.html">Home </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="about.html"> About</a>
+                      </li>
+                      <li class="nav-item active">
+                        <a class="nav-link" href="service.html">Topics <span class="sr-only">(current)</span> </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="Frontdmi.html">DIM</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="team.html">Team</a>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+            </header>
+  <style>
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background: linear-gradient(135deg, #008080, #66CCCC);
+  color: #FFFFFF;
+}
+
+
+.carousel-container {
+  width: 90vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.page {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.content-box {
+  width: 45%;
+  background-color: #282A36;
+  color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.content-box:hover {
+  transform: translateY(-10px); /* Adds subtle lift effect */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+.content-box img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-bottom: 4px solid #FFD700;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+.content {
+  padding: 20px;
+  text-align: center;
+}
+
+.content h2 {
+  margin: 0;
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #FFD700; 
+}
+
+.content p {
+  font-size: 1em;
+  color: #CCCCCC;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #1A105F;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 1.4em;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-btn.left {
+  left: 10px;
+}
+
+.carousel-btn.right {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background-color: #FFD700;
+  color: #1A105F;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page {
+    flex-direction: column;
+  }
+
+  .content-box {
+    width: 90%;
+  }
+
+  .content-box img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    height: 70vh;
+  }
+
+  .content-box {
+    width: 100%;
+  }
+
+  .content-box img {
+    height: 150px;
+  }
+
+  .content h2 {
+    font-size: 1.3em;
+  }
+
+  .content p {
+    font-size: 0.9em;
+  }
+
+  .carousel-btn {
+    font-size: 1em;
+    padding: 8px;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <div class="carousel-container">
+    <div class="carousel" id="carousel">
+      <!-- Page 1 -->
+      <div class="page">
+        <div class="content-box">
+          <div class="content">
+            <h2>HTML Links</h2>
+            HTML links, or hyperlinks, allow users to navigate to different web pages or sections within the same page. You can customize links to open in new tabs, use images as links, or integrate them within buttons.
+            <p>• Hyperlinks: These are clickable links that take the user to another webpage or a specific section within the same page.
+              <br> • Syntax: The basic syntax for a hyperlink is < a href="link_address">Link Text< / a >.
+              <br> • Target Attribute: The target="_blank" attribute opens the linked page in a new tab or window.
+              <br> • Image as a Link: An image can be made clickable by placing it within an < a > tag.
+              <br> • Button as a Link: A button can be used to trigger a link by placing an < a > tag within the button element.
+            </p>
+          </div>
+        </div>
+        <div class="content-box">
+          <a href="Snippet/html9.html" class="image-link">
+            <img src="images/EX9.png" alt="Topic Image 2">
+          </a>
+          <div class="content">
+            <h2>Topic 9 Example</h2>
+            <p>clickable image for the example code</p>
+          </div>
+        </div>
+      </div>
+    <!-- Page 2 -->
+    <div class="page">
+      <div class="content-box">
+        <div class="content">
+          <h2>CSS Links</h2>
+          CSS allows you to style links, including removing the default underline, changing colors, and creating hover effects. You can also style link buttons to look like regular buttons by removing default link styles and adding button-like styles.
+          <p>•  Styling Links: You can use CSS to style links, including changing their color, font, and adding hover effects.
+            <br>
+            • Text Decoration: The text-decoration property removes the default underline from links.
+            <br>
+            • Background Color: The background-color property changes the background color of links.
+            <br>
+            • Link Buttons: You can style link buttons to look like regular buttons by removing default link styles and adding button-like styles, such as background color, padding, and border.               
+            </p>
+        </div>
+      </div>
+      <div class="content-box">
+        <a href="Snippet/html10.html" class="image-link">
+          <img src="images/EX10.png" alt="Topic Image 2">
+        </a>
+        <div class="content">
+          <h2>Topic 10 Example</h2>
+          <p>clickable image for the example code</p>
+        </div>
+      </div>
+    </div>
+      <!-- Page 3 -->
+      <div class="page">
+        <div class="content-box">
+          <div class="content">
+            <h2>HTML Image</h2>
+            HTML images are inserted into web pages using the < img>  tag. The src attribute specifies the image source, alt provides alternative text, and width and height set dimensions. The float CSS property can be used to position images alongside text.
+            <p>•	Image Syntax: The basic syntax for an image is < img src="image_url" alt="image_description" >.
+              <br>
+              •	src Attribute: Specifies the URL of the image file.
+              <br>
+              •	alt Attribute: Provides alternative text for the image, which is displayed if the image cannot be loaded or if the user is using a screen reader.  
+              <br> 
+              •	Width and Height Attributes: Define the dimensions of the image in pixels.   
+              <br>
+              •	Image Floating: The float CSS property allows you to position an image to the left or right of text, making the text wrap around the image.               
+              </p>
+          </div>
+        </div>
+        <div class="content-box">
+          <a href="Snippet/html11.html">
+          <img src="images/EX11.png" alt="Topic Image 2">
+          <div class="content">
+            <h2>Topic 11 Example</h2>
+            <p>clickable image for the example code</p>
+          </div>
+        </div>
+      </div>
+       <!-- Page 4 -->
+       <div class="page">
+        <div class="content-box">
+          <div class="content">
+            <h2>HTML ACTIVITY</h2>
+
+ <style>
+   .big-button {
+      display: inline-block;
+      padding: 15px 30px; 
+      font-size: 20px; 
+      font-weight: bold; 
+      color: white; 
+      background-color: #3498db; 
+      border-radius: 8px; 
+      text-decoration: none; 
+      transition: background-color 0.3s ease, transform 0.3s ease; 
+      cursor: pointer; 
+   }
+
+   .big-button:hover {
+      background-color: #2980b9; 
+      transform: scale(1.05); 
+   }
+
+   .big-button:active {
+      background-color: #1c6a9c; 
+      transform: scale(1); 
+   }
+</style>
+
+<a href="dmi/Frontdmi.html" class="big-button">Activity</a>
+          </div>
+        </div>
+        <div class="content-box">
+          <a href="dmi/Frontdmi.html">
+          <img src="images/EX12.png" alt="Topic Image 2">
+          <div class="content">
+            <h2>HTML ACTIVITY EXAMPLE</h2>
+          </a>
+          </div>
+        </div>
+      </div>
+
+  </div>
+  <button class="carousel-btn left" onclick="prevPage()"><</button>
+  <button class="carousel-btn right" onclick="nextPage()">></button>
+</div>
+
+<script>
+ let currentPage = 0;
+
+function updateCarousel() {
+  const carousel = document.getElementById("carousel");
+  carousel.style.transform = `translateX(-${currentPage * 100}%)`;
+}
+
+function nextPage() {
+  const pages = document.querySelectorAll(".page"); 
+  if (currentPage < pages.length - 1) {  
+    currentPage++;
+    updateCarousel();
+  }
+}
+
+function prevPage() {
+  if (currentPage > 0) {  
+    currentPage--;
+    updateCarousel();
+  }
+}
+</script>
+<style>
+
+#pageCounter {
+  display: flex;
+  justify-content: center;  
+  align-items: center;     
+  position: fixed;          
+  left: 50%;                
+  transform: translateX(-50%); 
+  bottom: 20px;            
+}
+
+.counter {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.counter.active {
+  background-color: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+}
+</style>
+</head>
+<body>
+
+<div id="pageCounter">
+  <a href="htmllec.html" class="counter" data-page="1">1</a>
+  <a href="htmllec2.html" class="counter" data-page="2">2</a>
+  <a href="htmllec3.html" class="counter" data-page="3">3</a>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+
+    let currentPage = window.location.pathname.split('/').pop().replace('page', '').replace('.html', '');
+    
+  
+    if (!currentPage || isNaN(currentPage)) {
+      currentPage = '3';
+    }
+    
+
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      if (counter.getAttribute('data-page') === currentPage) {
+        counter.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
+ </body>

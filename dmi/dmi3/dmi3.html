@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="images/Untitled design (3).png" type="">
+  <title>Drag-and-Drop Coding Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .code-container, .drop-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      background-color: #f4f4f4;
+    }
+
+    .code-snippet {
+      padding: 10px;
+      background-color: #eaeaea;
+      border: 1px solid #ccc;
+      cursor: grab;
+    }
+
+    .drop-zone {
+      padding: 15px;
+      border: 2px dashed #999;
+      background-color: #fafafa;
+      min-height: 50px;
+    }
+
+    .drop-zone.dropped {
+      background-color: #d4edda;
+      border: 2px solid #28a745;
+    }
+
+    .drop-zone.wrong {
+      background-color: #f8d7da;
+      border: 2px solid #dc3545;
+    }
+
+    #submit, #reset {
+      margin-top: 20px;
+      padding: 10px 20px;
+    }
+
+    #attempts {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Drag-and-Drop Coding Quiz</h1>
+  <p>Drag the code snippets into the correct order.</p>
+
+  <div id="quiz-container">
+    <!-- First set -->
+    <div id="code-container-1" class="code-container">
+      <div id="snippet1" class="code-snippet" draggable="true">Code Snippet 1</div>
+      <div id="snippet2" class="code-snippet" draggable="true">Code Snippet 2</div>
+    </div>
+    <div data-set="1" class="drop-zones-container">
+      <div class="drop-zone" data-id="snippet1"></div>
+      <div class="drop-zone" data-id="snippet2"></div>
+    </div>
+  
+    <!-- Second set -->
+    <div id="code-container-2" class="code-container">
+      <div id="snippet3" class="code-snippet" draggable="true">Code Snippet 3</div>
+      <div id="snippet4" class="code-snippet" draggable="true">Code Snippet 4</div>
+    </div>
+    <div data-set="2" class="drop-zones-container">
+      <div class="drop-zone" data-id="snippet3"></div>
+      <div class="drop-zone" data-id="snippet4"></div>
+    </div>
+  </div>
+
+  <div id="code-container-3" class="code-container">
+    <div id="snippet5" class="code-snippet" draggable="true">Code Snippet 5</div>
+    <div id="snippet6" class="code-snippet" draggable="true">Code Snippet 6</div>
+  </div>
+  <div data-set="3" class="drop-zones-container">
+    <div class="drop-zone" data-id="snippet6"></div>
+    <div class="drop-zone" data-id="snippet5"></div>
+  </div>
+  
+  <!-- Submit and Reset buttons -->
+  <button id="submit">Submit</button>
+  <button id="reset">Reset</button>
+  <p id="attempts">Attempts: 0</p>
+  <p id="result"></p>
+  
+  <script src="script4.js"></script>
+
+</body>
+</html>

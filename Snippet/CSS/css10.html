@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Code Snippet Viewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2em;
+      color: #333;
+    }
+
+    .code-box {
+      position: relative;
+      background-color: #282c34;
+      color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1em;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      overflow-x: auto;
+      margin-bottom: 20px;
+      height: auto;
+    }
+
+    /* Scrollable area for code */
+    .code-box pre {
+      margin: 0;
+      padding: 0;
+      overflow-x: auto;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+
+    .copy-btn:hover {
+      background-color: #45a049;
+    }
+
+    .copy-msg {
+      display: none;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 0.9em;
+      color: #4CAF50;
+      background-color: #f4f4f4;
+      padding: 5px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Code Snippet Viewer</h1>
+
+    <!-- Code box -->
+    <div class="code-box">
+      <button class="copy-btn" onclick="copyCode()">Copy Code</button>
+      <div class="copy-msg" id="copyMsg">Copied!</div>
+      <pre id="codeText">
+<!-- Example HTML code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Page</title>
+</head>
+<body>
+  <p>HTML
+    < div class="grid-container">
+      < div class="grid-item">Header< /div>
+      < div class="grid-item">Sidebar< /div>
+      < div class="grid-item">Main Content< /div>
+      < div class="grid-item">Footer< /div>
+    < /div>
+
+
+    CSS
+    /* Grid Container */
+    .grid-container {
+      display: grid;
+      grid-template-columns: 100px 200px 1fr; /* Three columns with specified widths */
+      grid-template-rows: 150px auto 50px; /* Three rows with specified heights */
+      gap: 10px; /* Space between rows and columns */
+      padding: 10px;
+      background-color: #f8f8f8;
+    }
+    
+    /* Grid Items */
+    .grid-item {
+      background-color: #3498db;
+      color: white;
+      font-size: 1.2em;
+      text-align: center;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    
+    /* Specific grid areas */
+    .grid-item:nth-child(1) { grid-column: 1 / -1; } /* Header spans across all columns */
+    .grid-item:nth-child(2) { grid-row: 2; grid-column: 1; } /* Sidebar in first column, second row */
+    .grid-item:nth-child(3) { grid-row: 2; grid-column: 2 / 4; } /* Main Content spans columns 2 and 3 in second row */
+    .grid-item:nth-child(4) { grid-column: 1 / -1; grid-row: 3; } /* Footer spans across all columns in third row */
+
+    
+    Explanation
+    Grid Lines: The grid is divided into lines that separate each row and column, allowing placement of items within specific grid sections.
+    
+    Grid-Template-Columns:
+    
+    grid-template-columns: 100px 200px 1fr: Creates three columns:
+    The first column is 100px wide.
+    The second column is 200px wide.
+    The third column (1fr) takes up the remaining available space.
+    Grid-Template-Rows:
+    
+    grid-template-rows: 150px auto 50px: Creates three rows:
+    The first row is 150px high.
+    The second row (auto) adjusts its height based on content.
+    The third row is 50px high.
+    Grid Item Placement:
+    
+    .grid-item:nth-child(1): The header spans across all columns (using grid-column: 1 / -1).
+    .grid-item:nth-child(2): The sidebar is placed in the first column, second row.
+    .grid-item:nth-child(3): The main content spans columns 2 and 3 in the second row.
+    .grid-item:nth-child(4): The footer spans across all columns in the third row.
+    
+    Just delete the space after < of the example code to work
+    </p>
+</body>
+</html>
+      </pre>
+    </div>
+  </div>
+
+  <script>
+    // Function to copy code text
+    function copyCode() {
+      // Get the code text area
+      const codeText = document.getElementById("codeText");
+      
+      // Create a temporary textarea element to hold the code
+      const tempTextArea = document.createElement("textarea");
+      tempTextArea.value = codeText.innerText;
+      
+      // Append the textarea to the body, select its contents, and execute copy
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempTextArea);
+
+      // Show the "Copied!" message
+      const copyMsg = document.getElementById("copyMsg");
+      copyMsg.style.display = "block";
+      
+      // Hide the "Copied!" message after 2 seconds
+      setTimeout(function() {
+        copyMsg.style.display = "none";
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>

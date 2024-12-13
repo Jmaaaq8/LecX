@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Code Snippet Viewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2em;
+      color: #333;
+    }
+
+    .code-box {
+      position: relative;
+      background-color: #282c34;
+      color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1em;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      overflow-x: auto;
+      margin-bottom: 20px;
+      height: auto;
+    }
+
+    /* Scrollable area for code */
+    .code-box pre {
+      margin: 0;
+      padding: 0;
+      overflow-x: auto;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+
+    .copy-btn:hover {
+      background-color: #45a049;
+    }
+
+    .copy-msg {
+      display: none;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 0.9em;
+      color: #4CAF50;
+      background-color: #f4f4f4;
+      padding: 5px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Code Snippet Viewer</h1>
+
+    <!-- Code box -->
+    <div class="code-box">
+      <button class="copy-btn" onclick="copyCode()">Copy Code</button>
+      <div class="copy-msg" id="copyMsg">Copied!</div>
+      <pre id="codeText">
+<!-- Example HTML code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Page</title>
+</head>
+<body>
+  <p>    Basic Hyperlink
+    < a href="https://www.example.com">Visit Example</a>
+    This link will take the user to example.com when clicked.
+    
+
+    Opening Link in a New Tab
+    < a href="https://www.example.com" target="_blank">Open Example in New Tab</a>
+    The target="_blank" attribute ensures the link opens in a new browser tab.
+    
+
+    Image as a Link
+    < a href="https://www.example.com">
+       < img src="image.jpg" alt="Example Image" />
+    < /a>
+    This example makes the image image.jpg clickable, taking the user to example.com.
+    
+
+    Button as a Link
+    < button onclick="window.location.href='https://www.example.com';">Go to Example< /button>
+    Here, the button will act like a link, directing the user to example.com when clicked.
+
+    
+    Button with <a> Tag Inside
+    < button>
+       < a href="https://www.example.com">Go to Example</a>
+    < /button>
+    In this version, an <a> tag is inside the button. Note that the link styling will need to be adjusted with CSS to make the < a > tag behave like a button.
+    
+    Just delete the space after < of the example code to work
+    </p>
+</body>
+</html>
+      </pre>
+    </div>
+  </div>
+
+  <script>
+    // Function to copy code text
+    function copyCode() {
+      // Get the code text area
+      const codeText = document.getElementById("codeText");
+      
+      // Create a temporary textarea element to hold the code
+      const tempTextArea = document.createElement("textarea");
+      tempTextArea.value = codeText.innerText;
+      
+      // Append the textarea to the body, select its contents, and execute copy
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempTextArea);
+
+      // Show the "Copied!" message
+      const copyMsg = document.getElementById("copyMsg");
+      copyMsg.style.display = "block";
+      
+      // Hide the "Copied!" message after 2 seconds
+      setTimeout(function() {
+        copyMsg.style.display = "none";
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
